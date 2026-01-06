@@ -19,7 +19,21 @@ Step 3. Paste code from jaeitee-swatches.css<br>
 Step 1. Open Layout → theme.liquid<br>
 Step 2. Find <head> secion.<br>
 Step 3. Add code near other stylesheets.<br>
-{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}<br>
+<pre>{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}</pre><br>
 
 ## 4) Insert it on the Product Page
-For this you have two options.
+For this you have two options.  You can either add custom liquid code inside your theme editor, or continue to edit the code in the code editor.
+<br>
+**Theme Editor Option**<br>
+Step 1: Go to Online Store -> Themes -> Edit Theme<br>
+Step 2: Open a Product Page<br>
+Step 3: Add a custom liquid code snippet<br>
+Step 4: Enter the following code where you want it to appear<br>
+<pre>{% render 'jaeitee-swatches' %}</pre>
+
+**Code Edit Option**
+Step 1: Go to Online Store -> Themes -> Edit Code<br>
+Step 2: Open sections/main-product.liquid<br>
+Step 3: Locate where the Price output is.<br>
+Step 4: Enter the following code:<br>
+<pre>{% render 'byooze-swatches' %}</pre>
