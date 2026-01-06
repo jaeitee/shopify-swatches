@@ -1,5 +1,22 @@
 # shopify-swatches
-The purpose is to select a Shopify collection, use each product’s thumbnail image, and display those images as 50px x 50px swatches on products that are tagged to reference that collection.
+The purpose is to select a Shopify collection, use each product’s thumbnail image, and display those images as 50px x 50px swatches on products that are tagged to reference that collection. <br>
+<br>
+![Swatch Example](assets/swatch_example.png)  <br>
+<br>
+### How to Use
+###Step 1: Create a collection for example called Tasty Apples.<br>
+The URL handle for this at the bottom of the page will display tasty-apples.<br>
+![Tasty Apples URL Handle](assets/tasty_apples.png)<br>
+<br>
+Add your products to this collection manually.<br>
+You can also create a smart collection based on conditions, and this will also work.<br>
+
+### Step 2: Tag your Products
+Add the tag **swatch-tasty-apples** to the products within that collection.<br>
+Any tagged product will now display that swatch.<br>
+
+
+
 
 
 ### Installation Instructions
