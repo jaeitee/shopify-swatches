@@ -31,7 +31,7 @@ Step 3: Add a custom liquid code snippet<br>
 Step 4: Enter the following code where you want it to appear<br>
 <pre>{% render 'jaeitee-swatches' %}</pre>
 
-**Code Edit Option**
+**Code Edit Option**<br>
 Step 1: Go to Online Store -> Themes -> Edit Code<br>
 Step 2: Open sections/main-product.liquid<br>
 Step 3: Locate where the Price output is.<br>
