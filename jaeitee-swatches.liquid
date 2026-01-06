@@ -1,0 +1,90 @@
+{%- comment -%}
+jaeitee Swatches (product page)
+Show when:
+1) Tag exists: swatch-<collection_handle>  -> show all products in that collection as swatches
+2) Otherwise: tags that match SKUs -> find those SKUs in the "swatch-index" collection
+{%- endcomment -%}
+
+{%- liquid
+  assign p = product
+
+  assign swatch_collection_handle = blank
+  for t in p.tags
+    if t contains 'swatch-'
+      assign swatch_collection_handle = t | remove: 'swatch-' | strip | handleize
+      break
+    endif
+  endfor
+
+  assign index_handle = index_handle | default: 'swatch-index'
+
+  assign sku_tags_csv = ''
+  for t in p.tags
+    assign cleaned = t | strip
+    if cleaned != blank
+      unless cleaned contains 'swatch-'
+        assign sku_tags_csv = sku_tags_csv | append: cleaned | append: ','
+      endunless
+    endif
+  endfor
+  assign sku_tags = sku_tags_csv | split: ','
+
+  assign swatch_products = blank
+  assign mode = blank
+
+  if swatch_collection_handle != blank and collections[swatch_collection_handle] != blank
+    assign swatch_products = collections[swatch_collection_handle].products
+    assign mode = 'collection'
+  elsif collections[index_handle] != blank
+    assign swatch_products = collections[index_handle].products
+    assign mode = 'sku'
+  endif
+-%}
+
+{%- if swatch_products != blank -%}
+  {%- capture swatches_html -%}
+    {%- if mode == 'collection' -%}
+      {%- for sp in swatch_products limit: 60 -%}
+        {%- if sp.featured_image != blank -%}
+          <a class="jaeitee-swatch{% if sp.handle == p.handle %} is-active{% endif %}"
+             href="{{ sp.url }}"
+             aria-label="{{ sp.title | escape }}"
+             title="{{ sp.title | escape }}">
+            {{ sp.featured_image | image_url: width: 80 | image_tag: alt: sp.title, loading: 'lazy' }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- else -%}
+      {%- for wanted_sku in sku_tags -%}
+        {%- assign wanted_sku_clean = wanted_sku | strip -%}
+        {%- if wanted_sku_clean == blank -%}{% continue %}{%- endif -%}
+
+        {%- assign matched_product = blank -%}
+        {%- for sp in swatch_products limit: 500 -%}
+          {%- for v in sp.variants -%}
+            {%- if v.sku == wanted_sku_clean -%}
+              {%- assign matched_product = sp -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if matched_product != blank -%}{% break %}{%- endif -%}
+        {%- endfor -%}
+
+        {%- if matched_product != blank and matched_product.featured_image != blank -%}
+          <a class="jaeitee-swatch{% if matched_product.handle == p.handle %} is-active{% endif %}"
+             href="{{ matched_product.url }}"
+             aria-label="{{ matched_product.title | escape }}"
+             title="{{ matched_product.title | escape }}">
+            {{ matched_product.featured_image | image_url: width: 80 | image_tag: alt: matched_product.title, loading: 'lazy' }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endcapture -%}
+
+  {%- if swatches_html contains 'jaeitee-swatch' -%}
+    <div class="jaeitee-swatches" data-jaeitee-swatches>
+      {{ swatches_html }}
+    </div>
+  {%- endif -%}
+{%- endif -%}
