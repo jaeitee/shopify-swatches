@@ -19,7 +19,7 @@ Step 3. Paste code from jaeitee-swatches.css<br>
 Step 1. Open Layout → theme.liquid<br>
 Step 2. Find <head> secion.<br>
 Step 3. Add code near other stylesheets.<br>
-<pre>{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}</pre><br>
+<pre>{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}</pre>
 
 ## 4) Insert it on the Product Page
 For this you have two options.  You can either add custom liquid code inside your theme editor, or continue to edit the code in the code editor.
