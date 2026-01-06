@@ -3,6 +3,8 @@ The purpose is to select a Shopify collection, use each product’s thumbnail im
 <br>
 ![Swatch Example](assets/swatch_example.png)  <br>
 <br>
+👉 If you like this project, follow along at https://jaeitee.xyz for more updates.
+<br>
 ## 📚 How to Use
 #### Step 1: Create a collection for example called Tasty Apples.<br>
 The URL handle for this at the bottom of the page will display tasty-apples.<br>
