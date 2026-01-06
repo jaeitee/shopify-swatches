@@ -3,43 +3,44 @@ The purpose is to select a Shopify collection, use each product’s thumbnail im
 <br>
 ![Swatch Example](assets/swatch_example.png)  <br>
 <br>
-### How to Use
-### Step 1: Create a collection for example called Tasty Apples.<br>
+## 📚 How to Use
+#### Step 1: Create a collection for example called Tasty Apples.<br>
 The URL handle for this at the bottom of the page will display tasty-apples.<br>
 ![Tasty Apples URL Handle](assets/tasty_apples.png)<br>
-<br>
 Add your products to this collection manually.<br>
 You can also create a smart collection based on conditions, and this will also work.<br>
 
-### Step 2: Tag your Products
+#### Step 2: Tag your Products
 Add the tag **swatch-tasty-apples** to the products within that collection.<br>
 ![Tasty Apples TAG](assets/tasty_apples_tag.png)<br>
 Any tagged product will now display that swatch.<br>
 
+#### Small Tips
+This can work with all your existing collections, just look at your existing URL handles to know the swatch-<url_handle> tag.<br>
+Customise the CSS to suit your style, change the active border colour etc.<br>
 
 
 
+## 💾 Installation Instructions
 
-### Installation Instructions
-
-## 1) Code Snippet
+### 1) Code Snippet
 **Add the snippet to your theme.** <br>
 Step 1. Online Store → Themes → Edit code → Snippets → Add new snippet<br>
 Step 2. Name it: jaeitee-swatches.liquid<br>
 Step 3. Paste code from jaeitee-swatches.liquid<br>
 
-## 2) Create CSS File
+### 2) Create CSS File
 Step 1. Online Store → Themes → Edit code → Assets → Add a new asset<br>
 Step 2. Name: jaeitee-swatches.css<br>
 Step 3. Paste code from jaeitee-swatches.css<br>
 
-## 3) Load CSS File
+### 3) Load CSS File
 Step 1. Open Layout → theme.liquid<br>
 Step 2. Find <head> secion.<br>
 Step 3. Add code near other stylesheets.<br>
 <pre>{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}</pre>
 
-## 4) Insert it on the Product Page
+### 4) Insert it on the Product Page
 For this you have two options.  You can either add custom liquid code inside your theme editor, or continue to edit the code in the code editor.
 <br>
 **Theme Editor Option**<br>
