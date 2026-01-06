@@ -4,7 +4,7 @@ The purpose is to select a Shopify collection, use each product’s thumbnail im
 ![Swatch Example](assets/swatch_example.png)  <br>
 <br>
 ### How to Use
-###Step 1: Create a collection for example called Tasty Apples.<br>
+### Step 1: Create a collection for example called Tasty Apples.<br>
 The URL handle for this at the bottom of the page will display tasty-apples.<br>
 ![Tasty Apples URL Handle](assets/tasty_apples.png)<br>
 <br>
