@@ -13,6 +13,7 @@ You can also create a smart collection based on conditions, and this will also w
 
 ### Step 2: Tag your Products
 Add the tag **swatch-tasty-apples** to the products within that collection.<br>
+![Tasty Apples TAG](assets/tasty_apples_tag.png)<br>
 Any tagged product will now display that swatch.<br>
 
 
