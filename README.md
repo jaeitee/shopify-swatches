@@ -36,4 +36,4 @@ Step 1: Go to Online Store -> Themes -> Edit Code<br>
 Step 2: Open sections/main-product.liquid<br>
 Step 3: Locate where the Price output is.<br>
 Step 4: Enter the following code:<br>
-<pre>{% render 'byooze-swatches' %}</pre>
+<pre>{% render 'jaeitee-swatches' %}</pre>
