@@ -43,7 +43,8 @@ Step 3. Add code near other stylesheets.<br>
 <pre>{{ 'jaeitee-swatches.css' | asset_url | stylesheet_tag }}</pre>
 
 ### 4) Insert it on the Product Page
-For this you have two options.  You can either add custom liquid code inside your theme editor, or continue to edit the code in the code editor.
+For this you have two options.  You can either add custom liquid code inside your theme editor, or continue to edit the code in the code editor.<br>
+
 <br>
 **Theme Editor Option**<br>
 Step 1: Go to Online Store -> Themes -> Edit Theme<br>
